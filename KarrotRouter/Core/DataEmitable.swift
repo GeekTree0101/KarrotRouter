@@ -27,7 +27,7 @@ extension DataEmitable where Self: UIViewController {
   }
   
   func emit(behavior: DataPassingBehavior, from viewController: UIViewController?) {
-    viewController?.parentViewControllers.forEach({ vc in
+    viewController?.behindViewControllers.forEach({ vc in
       guard let emitable = vc as? DataEmitable else { return }
       guard let drainable = emitable.drainable else {
         assertionFailure("drainable is null")
@@ -40,19 +40,19 @@ extension DataEmitable where Self: UIViewController {
 
 extension UIViewController {
   
-  fileprivate var parentViewControllers: [UIViewController] {
-    return behindViewControllers(from: self, child: []).filter({ $0 != self })
+  fileprivate var behindViewControllers: [UIViewController] {
+    return findBehindViewControllers(from: self, child: []).filter({ $0 != self })
   }
   
-  private func behindViewControllers(from viewController: UIViewController?, child: [UIViewController]) -> [UIViewController] {
+  private func findBehindViewControllers(from viewController: UIViewController?, child: [UIViewController]) -> [UIViewController] {
     
     if let nav = viewController?.navigationController {
-      return self.behindViewControllers(
+      return self.findBehindViewControllers(
         from: nav.presentingViewController,
         child: Array(nav.children.reversed()) + Array(child.reversed())
       )
     } else if let nav = viewController as? UINavigationController {
-      return self.behindViewControllers(
+      return self.findBehindViewControllers(
         from: nav.presentingViewController,
         child: Array(nav.children.reversed()) + Array(child.reversed())
       )
