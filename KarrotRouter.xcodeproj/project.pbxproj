@@ -1,0 +1,546 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		DA10B69F24ACB68100A0062A /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B69E24ACB68100A0062A /* AppDelegate.swift */; };
+		DA10B6A824ACB68400A0062A /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DA10B6A724ACB68400A0062A /* Assets.xcassets */; };
+		DA10B6AB24ACB68400A0062A /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DA10B6A924ACB68400A0062A /* LaunchScreen.storyboard */; };
+		DA10B6B624ACB68400A0062A /* KarrotRouterTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6B524ACB68400A0062A /* KarrotRouterTests.swift */; };
+		DA10B6C624ACB6FC00A0062A /* User.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6C524ACB6FC00A0062A /* User.swift */; };
+		DA10B6C824ACB70100A0062A /* Card.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6C724ACB70100A0062A /* Card.swift */; };
+		DA10B6CA24ACB70800A0062A /* FeedItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6C924ACB70800A0062A /* FeedItem.swift */; };
+		DA10B6CC24ACB93300A0062A /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6CB24ACB93300A0062A /* ProfileViewController.swift */; };
+		DA10B6CE24ACB93B00A0062A /* ProfileRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6CD24ACB93B00A0062A /* ProfileRouter.swift */; };
+		DA10B6D024ACB94300A0062A /* CardViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6CF24ACB94300A0062A /* CardViewController.swift */; };
+		DA10B6D224ACB94900A0062A /* CardRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6D124ACB94900A0062A /* CardRouter.swift */; };
+		DA10B6D424ACB95500A0062A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6D324ACB95500A0062A /* FeedViewController.swift */; };
+		DA10B6D624ACB95B00A0062A /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6D524ACB95B00A0062A /* FeedRouter.swift */; };
+		DA10B6DC24ACC14200A0062A /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA10B6DB24ACC14200A0062A /* CardViewController.xib */; };
+		DA10B6E424AD612C00A0062A /* DataPassing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6E324AD612C00A0062A /* DataPassing.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		DA10B6B224ACB68400A0062A /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = DA10B69324ACB68100A0062A /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = DA10B69A24ACB68100A0062A;
+			remoteInfo = KarrotRouter;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		DA10B69B24ACB68100A0062A /* KarrotRouter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = KarrotRouter.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA10B69E24ACB68100A0062A /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		DA10B6A724ACB68400A0062A /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		DA10B6AA24ACB68400A0062A /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		DA10B6AC24ACB68400A0062A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA10B6B124ACB68400A0062A /* KarrotRouterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KarrotRouterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		DA10B6B524ACB68400A0062A /* KarrotRouterTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KarrotRouterTests.swift; sourceTree = "<group>"; };
+		DA10B6B724ACB68400A0062A /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		DA10B6C524ACB6FC00A0062A /* User.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = User.swift; sourceTree = "<group>"; };
+		DA10B6C724ACB70100A0062A /* Card.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Card.swift; sourceTree = "<group>"; };
+		DA10B6C924ACB70800A0062A /* FeedItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedItem.swift; sourceTree = "<group>"; };
+		DA10B6CB24ACB93300A0062A /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
+		DA10B6CD24ACB93B00A0062A /* ProfileRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileRouter.swift; sourceTree = "<group>"; };
+		DA10B6CF24ACB94300A0062A /* CardViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardViewController.swift; sourceTree = "<group>"; };
+		DA10B6D124ACB94900A0062A /* CardRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardRouter.swift; sourceTree = "<group>"; };
+		DA10B6D324ACB95500A0062A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
+		DA10B6D524ACB95B00A0062A /* FeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
+		DA10B6DB24ACC14200A0062A /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
+		DA10B6E324AD612C00A0062A /* DataPassing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassing.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		DA10B69824ACB68100A0062A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA10B6AE24ACB68400A0062A /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		DA10B69224ACB68100A0062A = {
+			isa = PBXGroup;
+			children = (
+				DA10B69D24ACB68100A0062A /* KarrotRouter */,
+				DA10B6B424ACB68400A0062A /* KarrotRouterTests */,
+				DA10B69C24ACB68100A0062A /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		DA10B69C24ACB68100A0062A /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B69B24ACB68100A0062A /* KarrotRouter.app */,
+				DA10B6B124ACB68400A0062A /* KarrotRouterTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		DA10B69D24ACB68100A0062A /* KarrotRouter */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6E224AD612000A0062A /* Core */,
+				DA10B6C424ACB6F400A0062A /* Model */,
+				DA10B6C024ACB6CE00A0062A /* Scene */,
+				DA10B69E24ACB68100A0062A /* AppDelegate.swift */,
+				DA10B6A724ACB68400A0062A /* Assets.xcassets */,
+				DA10B6A924ACB68400A0062A /* LaunchScreen.storyboard */,
+				DA10B6AC24ACB68400A0062A /* Info.plist */,
+			);
+			path = KarrotRouter;
+			sourceTree = "<group>";
+		};
+		DA10B6B424ACB68400A0062A /* KarrotRouterTests */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6B524ACB68400A0062A /* KarrotRouterTests.swift */,
+				DA10B6B724ACB68400A0062A /* Info.plist */,
+			);
+			path = KarrotRouterTests;
+			sourceTree = "<group>";
+		};
+		DA10B6C024ACB6CE00A0062A /* Scene */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6C324ACB6E400A0062A /* Profile */,
+				DA10B6C224ACB6DF00A0062A /* Card */,
+				DA10B6C124ACB6D300A0062A /* Feed */,
+			);
+			path = Scene;
+			sourceTree = "<group>";
+		};
+		DA10B6C124ACB6D300A0062A /* Feed */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6D324ACB95500A0062A /* FeedViewController.swift */,
+				DA10B6D524ACB95B00A0062A /* FeedRouter.swift */,
+			);
+			path = Feed;
+			sourceTree = "<group>";
+		};
+		DA10B6C224ACB6DF00A0062A /* Card */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6CF24ACB94300A0062A /* CardViewController.swift */,
+				DA10B6DB24ACC14200A0062A /* CardViewController.xib */,
+				DA10B6D124ACB94900A0062A /* CardRouter.swift */,
+			);
+			path = Card;
+			sourceTree = "<group>";
+		};
+		DA10B6C324ACB6E400A0062A /* Profile */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6CB24ACB93300A0062A /* ProfileViewController.swift */,
+				DA10B6CD24ACB93B00A0062A /* ProfileRouter.swift */,
+			);
+			path = Profile;
+			sourceTree = "<group>";
+		};
+		DA10B6C424ACB6F400A0062A /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6C524ACB6FC00A0062A /* User.swift */,
+				DA10B6C724ACB70100A0062A /* Card.swift */,
+				DA10B6C924ACB70800A0062A /* FeedItem.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		DA10B6E224AD612000A0062A /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				DA10B6E324AD612C00A0062A /* DataPassing.swift */,
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		DA10B69A24ACB68100A0062A /* KarrotRouter */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA10B6BA24ACB68400A0062A /* Build configuration list for PBXNativeTarget "KarrotRouter" */;
+			buildPhases = (
+				DA10B69724ACB68100A0062A /* Sources */,
+				DA10B69824ACB68100A0062A /* Frameworks */,
+				DA10B69924ACB68100A0062A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = KarrotRouter;
+			productName = KarrotRouter;
+			productReference = DA10B69B24ACB68100A0062A /* KarrotRouter.app */;
+			productType = "com.apple.product-type.application";
+		};
+		DA10B6B024ACB68400A0062A /* KarrotRouterTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = DA10B6BD24ACB68400A0062A /* Build configuration list for PBXNativeTarget "KarrotRouterTests" */;
+			buildPhases = (
+				DA10B6AD24ACB68400A0062A /* Sources */,
+				DA10B6AE24ACB68400A0062A /* Frameworks */,
+				DA10B6AF24ACB68400A0062A /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DA10B6B324ACB68400A0062A /* PBXTargetDependency */,
+			);
+			name = KarrotRouterTests;
+			productName = KarrotRouterTests;
+			productReference = DA10B6B124ACB68400A0062A /* KarrotRouterTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		DA10B69324ACB68100A0062A /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1150;
+				LastUpgradeCheck = 1150;
+				ORGANIZATIONNAME = Geektree0101;
+				TargetAttributes = {
+					DA10B69A24ACB68100A0062A = {
+						CreatedOnToolsVersion = 11.5;
+					};
+					DA10B6B024ACB68400A0062A = {
+						CreatedOnToolsVersion = 11.5;
+						TestTargetID = DA10B69A24ACB68100A0062A;
+					};
+				};
+			};
+			buildConfigurationList = DA10B69624ACB68100A0062A /* Build configuration list for PBXProject "KarrotRouter" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = DA10B69224ACB68100A0062A;
+			productRefGroup = DA10B69C24ACB68100A0062A /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				DA10B69A24ACB68100A0062A /* KarrotRouter */,
+				DA10B6B024ACB68400A0062A /* KarrotRouterTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		DA10B69924ACB68100A0062A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA10B6AB24ACB68400A0062A /* LaunchScreen.storyboard in Resources */,
+				DA10B6A824ACB68400A0062A /* Assets.xcassets in Resources */,
+				DA10B6DC24ACC14200A0062A /* CardViewController.xib in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA10B6AF24ACB68400A0062A /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		DA10B69724ACB68100A0062A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA10B6CE24ACB93B00A0062A /* ProfileRouter.swift in Sources */,
+				DA10B6D424ACB95500A0062A /* FeedViewController.swift in Sources */,
+				DA10B6D624ACB95B00A0062A /* FeedRouter.swift in Sources */,
+				DA10B6D024ACB94300A0062A /* CardViewController.swift in Sources */,
+				DA10B6CA24ACB70800A0062A /* FeedItem.swift in Sources */,
+				DA10B6E424AD612C00A0062A /* DataPassing.swift in Sources */,
+				DA10B6C624ACB6FC00A0062A /* User.swift in Sources */,
+				DA10B6CC24ACB93300A0062A /* ProfileViewController.swift in Sources */,
+				DA10B6C824ACB70100A0062A /* Card.swift in Sources */,
+				DA10B6D224ACB94900A0062A /* CardRouter.swift in Sources */,
+				DA10B69F24ACB68100A0062A /* AppDelegate.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		DA10B6AD24ACB68400A0062A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DA10B6B624ACB68400A0062A /* KarrotRouterTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DA10B6B324ACB68400A0062A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = DA10B69A24ACB68100A0062A /* KarrotRouter */;
+			targetProxy = DA10B6B224ACB68400A0062A /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		DA10B6A924ACB68400A0062A /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				DA10B6AA24ACB68400A0062A /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		DA10B6B824ACB68400A0062A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		DA10B6B924ACB68400A0062A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		DA10B6BB24ACB68400A0062A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9VG88469Q;
+				INFOPLIST_FILE = KarrotRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geektree0101.KarrotRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		DA10B6BC24ACB68400A0062A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9VG88469Q;
+				INFOPLIST_FILE = KarrotRouter/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geektree0101.KarrotRouter;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		DA10B6BE24ACB68400A0062A /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9VG88469Q;
+				INFOPLIST_FILE = KarrotRouterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geektree0101.KarrotRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KarrotRouter.app/KarrotRouter";
+			};
+			name = Debug;
+		};
+		DA10B6BF24ACB68400A0062A /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = E9VG88469Q;
+				INFOPLIST_FILE = KarrotRouterTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.5;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.geektree0101.KarrotRouterTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/KarrotRouter.app/KarrotRouter";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		DA10B69624ACB68100A0062A /* Build configuration list for PBXProject "KarrotRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA10B6B824ACB68400A0062A /* Debug */,
+				DA10B6B924ACB68400A0062A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA10B6BA24ACB68400A0062A /* Build configuration list for PBXNativeTarget "KarrotRouter" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA10B6BB24ACB68400A0062A /* Debug */,
+				DA10B6BC24ACB68400A0062A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		DA10B6BD24ACB68400A0062A /* Build configuration list for PBXNativeTarget "KarrotRouterTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				DA10B6BE24ACB68400A0062A /* Debug */,
+				DA10B6BF24ACB68400A0062A /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = DA10B69324ACB68100A0062A /* Project object */;
+}
