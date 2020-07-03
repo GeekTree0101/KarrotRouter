@@ -1,21 +1,17 @@
 //
-//  DataPassing.swift
+//  DataEmitable.swift
 //  KarrotRouter
 //
-//  Created by Geektree0101 on 2020/07/02.
+//  Created by Geektree0101 on 2020/07/03.
 //  Copyright © 2020 Geektree0101. All rights reserved.
 //
 
 import UIKit
 
-enum DataPassingBehavior {
-  
-  case updateCard
-}
-
 private var drainableKey: String = "darainable"
 
 protocol DataEmitable: class {
+  
   var drainable: DataDrainable? { get set }
 }
 
@@ -42,27 +38,21 @@ extension DataEmitable where Self: UIViewController {
   }
 }
 
-protocol DataDrainable: class {
-  
-  func drain(behavior: DataPassingBehavior, from viewController: UIViewController?)
-}
-
-
 extension UIViewController {
   
   fileprivate var parentViewControllers: [UIViewController] {
-    return relatedViewControllers(from: self, child: []).filter({ $0 != self })
+    return behindViewControllers(from: self, child: []).filter({ $0 != self })
   }
   
-  private func relatedViewControllers(from viewController: UIViewController?, child: [UIViewController]) -> [UIViewController] {
+  private func behindViewControllers(from viewController: UIViewController?, child: [UIViewController]) -> [UIViewController] {
     
     if let nav = viewController?.navigationController {
-      return self.relatedViewControllers(
+      return self.behindViewControllers(
         from: nav.presentingViewController,
         child: Array(nav.children.reversed()) + Array(child.reversed())
       )
     } else if let nav = viewController as? UINavigationController {
-      return self.relatedViewControllers(
+      return self.behindViewControllers(
         from: nav.presentingViewController,
         child: Array(nav.children.reversed()) + Array(child.reversed())
       )

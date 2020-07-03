@@ -21,7 +21,9 @@
 		DA10B6D424ACB95500A0062A /* FeedViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6D324ACB95500A0062A /* FeedViewController.swift */; };
 		DA10B6D624ACB95B00A0062A /* FeedRouter.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6D524ACB95B00A0062A /* FeedRouter.swift */; };
 		DA10B6DC24ACC14200A0062A /* CardViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = DA10B6DB24ACC14200A0062A /* CardViewController.xib */; };
-		DA10B6E424AD612C00A0062A /* DataPassing.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6E324AD612C00A0062A /* DataPassing.swift */; };
+		DA10B6E424AD612C00A0062A /* DataPassingBehavior.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6E324AD612C00A0062A /* DataPassingBehavior.swift */; };
+		DA10B70024AF6C0300A0062A /* DataDrainable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B6FF24AF6C0300A0062A /* DataDrainable.swift */; };
+		DA10B70224AF6C0C00A0062A /* DataEmitable.swift in Sources */ = {isa = PBXBuildFile; fileRef = DA10B70124AF6C0C00A0062A /* DataEmitable.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -53,7 +55,9 @@
 		DA10B6D324ACB95500A0062A /* FeedViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedViewController.swift; sourceTree = "<group>"; };
 		DA10B6D524ACB95B00A0062A /* FeedRouter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedRouter.swift; sourceTree = "<group>"; };
 		DA10B6DB24ACC14200A0062A /* CardViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CardViewController.xib; sourceTree = "<group>"; };
-		DA10B6E324AD612C00A0062A /* DataPassing.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassing.swift; sourceTree = "<group>"; };
+		DA10B6E324AD612C00A0062A /* DataPassingBehavior.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataPassingBehavior.swift; sourceTree = "<group>"; };
+		DA10B6FF24AF6C0300A0062A /* DataDrainable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataDrainable.swift; sourceTree = "<group>"; };
+		DA10B70124AF6C0C00A0062A /* DataEmitable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DataEmitable.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -166,7 +170,9 @@
 		DA10B6E224AD612000A0062A /* Core */ = {
 			isa = PBXGroup;
 			children = (
-				DA10B6E324AD612C00A0062A /* DataPassing.swift */,
+				DA10B6E324AD612C00A0062A /* DataPassingBehavior.swift */,
+				DA10B70124AF6C0C00A0062A /* DataEmitable.swift */,
+				DA10B6FF24AF6C0300A0062A /* DataDrainable.swift */,
 			);
 			path = Core;
 			sourceTree = "<group>";
@@ -274,14 +280,16 @@
 			files = (
 				DA10B6CE24ACB93B00A0062A /* ProfileRouter.swift in Sources */,
 				DA10B6D424ACB95500A0062A /* FeedViewController.swift in Sources */,
+				DA10B70024AF6C0300A0062A /* DataDrainable.swift in Sources */,
 				DA10B6D624ACB95B00A0062A /* FeedRouter.swift in Sources */,
 				DA10B6D024ACB94300A0062A /* CardViewController.swift in Sources */,
 				DA10B6CA24ACB70800A0062A /* FeedItem.swift in Sources */,
-				DA10B6E424AD612C00A0062A /* DataPassing.swift in Sources */,
+				DA10B6E424AD612C00A0062A /* DataPassingBehavior.swift in Sources */,
 				DA10B6C624ACB6FC00A0062A /* User.swift in Sources */,
 				DA10B6CC24ACB93300A0062A /* ProfileViewController.swift in Sources */,
 				DA10B6C824ACB70100A0062A /* Card.swift in Sources */,
 				DA10B6D224ACB94900A0062A /* CardRouter.swift in Sources */,
+				DA10B70224AF6C0C00A0062A /* DataEmitable.swift in Sources */,
 				DA10B69F24ACB68100A0062A /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
