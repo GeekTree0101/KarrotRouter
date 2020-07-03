@@ -14,14 +14,7 @@ protocol ProfileDataStore: class {
   var feedItems: [FeedItem] { get set }
 }
 
-extension ProfileViewController: DataDrainDataSource {
-  
-  func getDataDrainableRouter() -> DataDrainable? {
-    return self.router
-  }
-}
-
-class ProfileViewController: UIViewController, ProfileDataStore {
+class ProfileViewController: UIViewController, ProfileDataStore, DataEmitable {
   
   private lazy var tableView: UITableView = {
     let v = UITableView(frame: .zero)
@@ -55,6 +48,7 @@ class ProfileViewController: UIViewController, ProfileDataStore {
     router.dataStore = viewController
     
     viewController.router = router
+    viewController.drainable = router
   }
   
   override func viewDidLoad() {

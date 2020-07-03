@@ -13,9 +13,33 @@ enum DataPassingBehavior {
   case updateCard
 }
 
-protocol DataDrainDataSource: class {
+private var drainableKey: String = "darainable"
+
+protocol DataEmitable: class {
+  var drainable: DataDrainable? { get set }
+}
+
+extension DataEmitable where Self: UIViewController {
   
-  func getDataDrainableRouter() -> DataDrainable?
+  var drainable: DataDrainable? {
+    get {
+      return objc_getAssociatedObject(self, &drainableKey) as? DataDrainable
+    }
+    set {
+      objc_setAssociatedObject(self, &drainableKey, newValue, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+    }
+  }
+  
+  func emit(behavior: DataPassingBehavior, from viewController: UIViewController?) {
+    viewController?.parentViewControllers.forEach({ vc in
+      guard let emitable = vc as? DataEmitable else { return }
+      guard let drainable = emitable.drainable else {
+        assertionFailure("drainable is null")
+        return
+      }
+      drainable.drain(behavior: behavior, from: viewController)
+    })
+  }
 }
 
 protocol DataDrainable: class {
@@ -23,15 +47,6 @@ protocol DataDrainable: class {
   func drain(behavior: DataPassingBehavior, from viewController: UIViewController?)
 }
 
-extension DataDrainable {
-  func emit(behavior: DataPassingBehavior, from viewController: UIViewController?) {
-    viewController?.parentViewControllers.forEach({ vc in
-      (vc as? DataDrainDataSource)?
-        .getDataDrainableRouter()?
-        .drain(behavior: behavior, from: viewController)
-    })
-  }
-}
 
 extension UIViewController {
   

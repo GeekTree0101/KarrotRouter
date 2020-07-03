@@ -13,14 +13,7 @@ protocol FeedDataStore: class {
   var feedItems: [FeedItem] { get set }
 }
 
-extension FeedViewController: DataDrainDataSource {
-  
-  func getDataDrainableRouter() -> DataDrainable? {
-    return self.router
-  }
-}
-
-class FeedViewController: UIViewController, FeedDataStore {
+class FeedViewController: UIViewController, FeedDataStore, DataEmitable {
   
   private lazy var tableView: UITableView = {
     let v = UITableView(frame: .zero)
@@ -54,6 +47,7 @@ class FeedViewController: UIViewController, FeedDataStore {
     router.dataStore = self
     
     viewController.router = router
+    viewController.drainable = router
   }
   
   override func viewDidLoad() {

@@ -18,10 +18,16 @@ protocol ProfileDataPassing: class {
   var dataStore: ProfileDataStore? { get set }
 }
 
-class ProfileRouter: ProfileRouteLogic, ProfileDataPassing {
+class ProfileRouter: ProfileDataPassing {
   
   weak var viewController: ProfileViewController?
   weak var dataStore: ProfileDataStore?
+  
+}
+
+// MARK: - Route Logic
+
+extension ProfileRouter: ProfileRouteLogic {
   
   func pushCardViewController(feedID: Int) {
     
@@ -49,6 +55,8 @@ class ProfileRouter: ProfileRouteLogic, ProfileDataPassing {
   }
 }
 
+// MARK: - DataDrain Logic
+
 extension ProfileRouter: DataDrainable {
   
   func drain(behavior: DataPassingBehavior, from viewController: UIViewController?) {
@@ -67,7 +75,7 @@ extension ProfileRouter: DataDrainable {
         self.viewController?.reload()
         
       default:
-        // TODO: other card editable view controller
+        assertionFailure("undefined \(String(describing: viewController))")
         break
       }
     }

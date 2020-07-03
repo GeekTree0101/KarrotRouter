@@ -18,10 +18,16 @@ protocol CardDataPassing: class {
   var dataStore: CardDataStore? { get set }
 }
 
-class CardRouter: CardRouteLogic, CardDataPassing {
+class CardRouter: CardDataPassing {
   
   weak var viewController: CardViewController?
   weak var dataStore: CardDataStore?
+  
+}
+
+// MARK: - Route Logic
+
+extension CardRouter: CardRouteLogic {
   
   func pushProfileViewController() {
     let profileVC = ProfileViewController()
@@ -42,6 +48,8 @@ class CardRouter: CardRouteLogic, CardDataPassing {
   }
 }
 
+// MARK: - DataDrain Logic
+
 extension CardRouter: DataDrainable {
   
   func drain(behavior: DataPassingBehavior, from viewController: UIViewController?) {
@@ -58,6 +66,7 @@ extension CardRouter: DataDrainable {
         self.viewController?.update()
         
       default:
+        assertionFailure("undefined \(String(describing: viewController))")
         break
       }
     }

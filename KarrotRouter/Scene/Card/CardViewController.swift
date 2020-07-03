@@ -14,14 +14,7 @@ protocol CardDataStore: class {
   var user: User? { get set }
 }
 
-extension CardViewController: DataDrainDataSource {
-  
-  func getDataDrainableRouter() -> DataDrainable? {
-    return self.router
-  }
-}
-
-class CardViewController: UIViewController, CardDataStore {
+class CardViewController: UIViewController, CardDataStore, DataEmitable {
   
   private lazy var editButton = UIBarButtonItem(
     barButtonSystemItem: .edit,
@@ -68,6 +61,7 @@ class CardViewController: UIViewController, CardDataStore {
     router.dataStore = viewController
     
     viewController.router = router
+    viewController.drainable = router
   }
   
   override func viewDidLoad() {
@@ -104,6 +98,7 @@ extension CardViewController {
   @objc func didTapEditBarButtonItem() {
     self.textView.isEditable = true
     self.textView.becomeFirstResponder()
+    self.textView.selectedRange = .init(location: 0, length: 0)
     self.update()
   }
   
@@ -111,7 +106,7 @@ extension CardViewController {
     self.textView.isEditable = false
     self.card?.content = self.textView.text
     self.textView.resignFirstResponder()
-    self.router.emit(behavior: .updateCard, from: self)
+    self.emit(behavior: .updateCard, from: self)
     self.update()
   }
   

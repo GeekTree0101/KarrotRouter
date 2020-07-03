@@ -18,10 +18,16 @@ protocol FeedDataPassing: class {
   var dataStore: FeedDataStore? { get set }
 }
 
-class FeedRouter: FeedDataPassing, FeedRouteLogic {
+class FeedRouter: FeedDataPassing {
   
   weak var viewController: FeedViewController?
   weak var dataStore: FeedDataStore?
+  
+}
+
+// MARK: - Route Logic
+
+extension FeedRouter: FeedRouteLogic {
   
   func pushCardViewController(feedID: Int) {
     guard let feedItem = dataStore?.feedItems
@@ -48,6 +54,8 @@ class FeedRouter: FeedDataPassing, FeedRouteLogic {
   }
 }
 
+// MARK: - DataDrain Logic
+
 extension FeedRouter: DataDrainable {
   
   func drain(behavior: DataPassingBehavior, from viewController: UIViewController?) {
@@ -66,6 +74,7 @@ extension FeedRouter: DataDrainable {
         self.viewController?.reload()
         
       default:
+        assertionFailure("undefined \(String(describing: viewController))")
         break
       }
     }
