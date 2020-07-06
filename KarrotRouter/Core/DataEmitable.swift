@@ -26,14 +26,13 @@ extension DataEmitable where Self: UIViewController {
     }
   }
   
-  func emit(behavior: DataPassingBehavior, from viewController: UIViewController?) {
-    viewController?.behindViewControllers.forEach({ vc in
-      guard let emitable = vc as? DataEmitable else { return }
-      guard let drainable = emitable.drainable else {
-        assertionFailure("drainable is null")
-        return
-      }
-      drainable.drain(behavior: behavior, from: viewController)
+  func emit(context: DataDrainContext?) {
+    guard let context = context else { return }
+    
+    self.behindViewControllers.forEach({ vc in
+      guard let emitable = vc as? DataEmitable,
+        let drainable = emitable.drainable else { return }
+      drainable.drain(context: context)
     })
   }
 }

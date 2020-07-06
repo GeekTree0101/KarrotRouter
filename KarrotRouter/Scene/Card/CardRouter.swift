@@ -16,6 +16,7 @@ protocol CardRouteLogic: class {
 protocol CardDataPassing: class {
   
   var dataStore: CardDataStore? { get set }
+  var cardUpdatedContext: CardUpdatedDrainContext? { get }
 }
 
 class CardRouter: CardDataPassing {
@@ -23,6 +24,10 @@ class CardRouter: CardDataPassing {
   weak var viewController: CardViewController?
   weak var dataStore: CardDataStore?
   
+  var cardUpdatedContext: CardUpdatedDrainContext? {
+    guard let card = dataStore?.card else { return nil }
+    return CardUpdatedDrainContext(card: card)
+  }
 }
 
 // MARK: - Route Logic
@@ -52,23 +57,15 @@ extension CardRouter: CardRouteLogic {
 
 extension CardRouter: DataDrainable {
   
-  func drain(behavior: DataPassingBehavior, from viewController: UIViewController?) {
-    switch behavior {
-    case .updateCard:
-      switch viewController {
-      case let vc as CardViewController:
-        guard let card = vc.router.dataStore?.card,
-          self.dataStore?.card?.id == card.id else {
-            return
-        }
-        
-        self.dataStore?.card = card
-        self.viewController?.update()
-        
-      default:
-        assertionFailure("undefined \(String(describing: viewController))")
-        break
-      }
+  func drain(context: DataDrainContext) {
+    switch context {
+    case let ctx as CardUpdatedDrainContext:
+      guard self.dataStore?.card?.id == ctx.card.id else { return }
+      self.dataStore?.card = ctx.card
+      self.viewController?.update()
+      
+    default:
+      break
     }
   }
 }

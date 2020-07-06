@@ -10,5 +10,5 @@ import UIKit
 
 protocol DataDrainable: class {
   
-  func drain(behavior: DataPassingBehavior, from viewController: UIViewController?)
+  func drain(context: DataDrainContext)
 }

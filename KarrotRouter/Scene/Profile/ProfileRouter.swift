@@ -59,25 +59,16 @@ extension ProfileRouter: ProfileRouteLogic {
 
 extension ProfileRouter: DataDrainable {
   
-  func drain(behavior: DataPassingBehavior, from viewController: UIViewController?) {
-    switch behavior {
-    case .updateCard:
-      switch viewController {
-      case let vc as CardViewController:
-        guard let card = vc.router.dataStore?.card,
-          let index = self.dataStore?.feedItems.firstIndex(where: {
-            $0.card?.id == card.id
-          }) else {
-            return
-        }
-        
-        self.dataStore?.feedItems[index].card = card
-        self.viewController?.reload()
-        
-      default:
-        assertionFailure("undefined \(String(describing: viewController))")
-        break
-      }
+  func drain(context: DataDrainContext) {
+    switch context {
+    case let ctx as CardUpdatedDrainContext:
+      guard let items = self.dataStore?.feedItems,
+        let index = items.firstIndex(where: { $0.card?.id == ctx.card.id }) else { return }
+      self.dataStore?.feedItems[index].card = ctx.card
+      self.viewController?.reload()
+      
+    default:
+      break
     }
   }
 }
