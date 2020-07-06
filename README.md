@@ -3,6 +3,19 @@ Effective Bi-direation dataPassing example for CleanSwift
 
 <img src="https://github.com/GeekTree0101/KarrotRouter/blob/master/res/example.gif" />
 
+# Concept
+
+<img src="https://github.com/GeekTree0101/KarrotRouter/blob/master/res/preview1.png" width=480pt />
+
+- Data-Drain & emit operates on low level boundaries with abstracted context(DataDrainContext)
+- Low level boundaries are UIViewController & Router
+
+<img src="https://github.com/GeekTree0101/KarrotRouter/blob/master/res/preview2.png" width=480pt />
+
+- You don't needs callback handler & delegate for update to behind(parent) view controllers
+- Data-Emitter flattens the top view controllers except itself.
+- Abstracted context(DataDrainContext) is passed to the object that inherits Datadrainable.
+
 # How to use it?
 
 1. Router inherit DataDrainable
