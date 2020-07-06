@@ -16,9 +16,16 @@ protocol CardRouteLogic: class {
 protocol CardDataPassing: class {
   
   var dataStore: CardDataStore? { get set }
+  var cardUpdatedContext: CardUpdatedDrainContext? { get } // <---- DataDrainContext
 }
 
-class CardRouter: CardDataPassing { ... }
+class CardRouter: CardDataPassing { 
+
+  var cardUpdatedContext: CardUpdatedDrainContext? {
+    guard let card = dataStore?.card else { return nil }
+    return CardUpdatedDrainContext(card: card)
+  }
+ }
 
 // MARK: - Route Logic
 
@@ -28,25 +35,15 @@ extension CardRouter: CardRouteLogic { ... }
 
 extension CardRouter: DataDrainable {
   
-  func drain(behavior: DataPassingBehavior, from viewController: UIViewController?) {
-    switch behavior {                     // <-------------- select behavior kind
-    case .updateCard:
-      switch viewController {
-      case let vc as CardViewController:  // <-------------- data-passing
-        guard let card = vc.router.dataStore?.card,
-          let index = self.dataStore?.feedItems.firstIndex(where: {
-            $0.card?.id == card.id
-          }) else {
-            return
-        }
-        
-        self.dataStore?.feedItems[index].card = card
-        self.viewController?.reload()
-        
-      default:
-        assertionFailure("undefined \(String(describing: viewController))")
-        break
-      }
+  func drain(context: DataDrainContext) {
+    switch context {
+    case let ctx as CardUpdatedDrainContext:
+      guard self.dataStore?.card?.id == ctx.card.id else { return }
+      self.dataStore?.card = ctx.card
+      self.viewController?.update()
+      
+    default:
+      break
     }
   }
 }
@@ -90,7 +87,7 @@ class CardViewController: UIViewController, CardDataStore, DataEmitable {
     self.textView.isEditable = false
     self.card?.content = self.textView.text
     self.textView.resignFirstResponder()
-    self.emit(behavior: .updateCard, from: self)  // <--------- emit
+    self.emit(context: router.cardUpdatedContext)  // <--------- emit
     self.update()
   }
 
