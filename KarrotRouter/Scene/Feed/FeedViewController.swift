@@ -13,7 +13,7 @@ protocol FeedDataStore: class {
   var feedItems: [FeedItem] { get set }
 }
 
-class FeedViewController: UIViewController, FeedDataStore, DataEmitable {
+class FeedViewController: UIViewController, FeedDataStore {
   
   private lazy var tableView: UITableView = {
     let v = UITableView(frame: .zero)

@@ -14,7 +14,7 @@ protocol CardDataStore: class {
   var user: User? { get set }
 }
 
-class CardViewController: UIViewController, CardDataStore, DataEmitable {
+class CardViewController: UIViewController, CardDataStore {
   
   private lazy var editButton = UIBarButtonItem(
     barButtonSystemItem: .edit,
