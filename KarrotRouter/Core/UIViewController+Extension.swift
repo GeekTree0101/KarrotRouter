@@ -21,9 +21,8 @@ extension UIViewController {
     }
   }
   
-  func emit(context: DataDrainContext?) {
-    guard let context = context else { return }
-    
+  func emit() {
+    guard let context = self.drainable?.currentContext else { return }
     self.behindViewControllers.forEach({ vc in
       guard let drainable = vc.drainable else { return }
       drainable.drain(context: context)

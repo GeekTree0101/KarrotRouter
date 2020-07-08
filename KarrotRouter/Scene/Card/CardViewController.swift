@@ -106,7 +106,7 @@ extension CardViewController {
     self.textView.isEditable = false
     self.card?.content = self.textView.text
     self.textView.resignFirstResponder()
-    self.emit(context: router.cardUpdatedContext)
+    self.emit()
     self.update()
   }
   
