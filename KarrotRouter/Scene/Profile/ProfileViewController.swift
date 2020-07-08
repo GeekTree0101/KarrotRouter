@@ -14,7 +14,7 @@ protocol ProfileDataStore: class {
   var feedItems: [FeedItem] { get set }
 }
 
-class ProfileViewController: UIViewController, ProfileDataStore, DataEmitable {
+class ProfileViewController: UIViewController, ProfileDataStore {
   
   private lazy var tableView: UITableView = {
     let v = UITableView(frame: .zero)

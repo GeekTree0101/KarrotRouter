@@ -1,5 +1,5 @@
 //
-//  DataEmitable.swift
+//  UIViewController+Extension.swift
 //  KarrotRouter
 //
 //  Created by Geektree0101 on 2020/07/03.
@@ -10,12 +10,7 @@ import UIKit
 
 private var drainableKey: String = "darainable"
 
-protocol DataEmitable: class {
-  
-  var drainable: DataDrainable? { get set }
-}
-
-extension DataEmitable where Self: UIViewController {
+extension UIViewController {
   
   var drainable: DataDrainable? {
     get {
@@ -30,8 +25,7 @@ extension DataEmitable where Self: UIViewController {
     guard let context = context else { return }
     
     self.behindViewControllers.forEach({ vc in
-      guard let emitable = vc as? DataEmitable,
-        let drainable = emitable.drainable else { return }
+      guard let drainable = vc.drainable else { return }
       drainable.drain(context: context)
     })
   }
