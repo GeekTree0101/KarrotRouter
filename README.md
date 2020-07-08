@@ -62,9 +62,9 @@ extension CardRouter: DataDrainable {
 }
 ```
 
-2. UIViewController inherit Emitable & inject drainable
+2. UIViewController inject drainable
 ```swift
-class CardViewController: UIViewController, DataEmitable {
+class CardViewController: UIViewController {
   
   init() {
     super.init(nibName: nil, bundle: nil)
@@ -93,7 +93,7 @@ class CardViewController: UIViewController, DataEmitable {
 
 ```swift
 
-class CardViewController: UIViewController, CardDataStore, DataEmitable {
+class CardViewController: UIViewController, CardDataStore {
 
 
   @objc func didTapDoneBarButtonItem() {
