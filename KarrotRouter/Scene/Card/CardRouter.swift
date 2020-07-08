@@ -57,6 +57,10 @@ extension CardRouter: CardRouteLogic {
 
 extension CardRouter: DataDrainable {
   
+  var currentContext: DataDrainContext? {
+    return cardUpdatedContext
+  }
+  
   func drain(context: DataDrainContext) {
     switch context {
     case let ctx as CardUpdatedDrainContext:

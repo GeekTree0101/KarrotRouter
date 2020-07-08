@@ -58,6 +58,10 @@ extension FeedRouter: FeedRouteLogic {
 
 extension FeedRouter: DataDrainable {
   
+  var currentContext: DataDrainContext? {
+    return nil
+  }
+  
   func drain(context: DataDrainContext) {
     switch context {
     case let ctx as CardUpdatedDrainContext:

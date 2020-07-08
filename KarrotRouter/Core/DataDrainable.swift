@@ -6,9 +6,10 @@
 //  Copyright © 2020 Geektree0101. All rights reserved.
 //
 
-import UIKit
+import Foundation
 
 protocol DataDrainable: class {
   
+  var currentContext: DataDrainContext? { get }
   func drain(context: DataDrainContext)
 }
